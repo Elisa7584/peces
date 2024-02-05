@@ -1,40 +1,27 @@
 import java.util.ArrayList;
 
 public class Biblioteca {
-    // Atributos de instancia
     private String nombre;
     private String ciudad;
-    private int añoInauguracion;
+    private int anoInauguracion;
     private int numPersonasAdscritas;
     private ArrayList<Libro> listaLibros;
 
     // Constructor básico
-    public Biblioteca(String nombre, String ciudad, int añoInauguracion) {
+    public Biblioteca(String nombre, String ciudad, int anoInauguracion) {
         this.nombre = nombre;
         this.ciudad = ciudad;
-        if (añoInauguracion >= 1218 && añoInauguracion <= 2024) {
-            this.añoInauguracion = añoInauguracion;
-        } else {
-            this.añoInauguracion = 2024;
-        }
+        setAnoInauguracion(anoInauguracion);
         this.numPersonasAdscritas = 0;
         this.listaLibros = new ArrayList<>();
     }
 
     // Constructor completo
-    public Biblioteca(String nombre, String ciudad, int añoInauguracion, int numPersonasAdscritas, ArrayList<Libro> listaLibros) {
+    public Biblioteca(String nombre, String ciudad, int anoInauguracion, int numPersonasAdscritas, ArrayList<Libro> listaLibros) {
         this.nombre = nombre;
         this.ciudad = ciudad;
-        if (añoInauguracion >= 1218 && añoInauguracion <= 2024) {
-            this.añoInauguracion = añoInauguracion;
-        } else {
-            this.añoInauguracion = 2024;
-        }
-        if (numPersonasAdscritas >= 0) {
-            this.numPersonasAdscritas = numPersonasAdscritas;
-        } else {
-            this.numPersonasAdscritas = 0;
-        }
+        setAnoInauguracion(anoInauguracion);
+        setNumPersonasAdscritas(numPersonasAdscritas);
         this.listaLibros = new ArrayList<>(listaLibros);
     }
 
@@ -55,13 +42,13 @@ public class Biblioteca {
         this.ciudad = ciudad;
     }
 
-    public int getAñoInauguracion() {
-        return añoInauguracion;
+    public int getAnoInauguracion() {
+        return anoInauguracion;
     }
 
-    public void setAñoInauguracion(int añoInauguracion) {
-        if (añoInauguracion >= 1218 && añoInauguracion <= 2024) {
-            this.añoInauguracion = añoInauguracion;
+    public void setAnoInauguracion(int anoInauguracion) {
+        if (anoInauguracion >= 1218 && anoInauguracion <= 2024) {
+            this.anoInauguracion = anoInauguracion;
         }
     }
 
@@ -91,31 +78,12 @@ public class Biblioteca {
     // Método toString
     @Override
     public String toString() {
-        return "La biblioteca " + nombre + " de " + ciudad + " (" + añoInauguracion + "), tiene adscritas " +
+        return "La biblioteca " + nombre + " de " + ciudad + " (" + anoInauguracion + "), tiene adscritas " +
                 numPersonasAdscritas + " personas y cuenta con " + listaLibros.size() + " libros.";
     }
 
-    // Método extra para añadir un libro a la biblioteca
-    public void añadirLibro(Libro libro) {
+    // Método para añadir un libro a la biblioteca
+    public void agregarLibro(Libro libro) {
         listaLibros.add(libro);
-    }
-
-    public static void main(String[] args) {
-        // Creación de libros
-        Libro libro1 = new Libro("Las Tempestálidas", "Georgi Gospodinov", 841761, 2020, 400);
-        Libro libro2 = new Libro("Cómo matar a tu familia", "Bella Mackie", 849129, 2021, 400);
-        Libro libro3 = new Libro("Oso", "Marian Engel", 841597, 1976, 168);
-
-        // Creación de bibliotecas
-        Biblioteca bibliotecaSalon = new Biblioteca("Salón", "Granada", 1917, 32916, new ArrayList<>(List.of(libro1, libro2)));
-        Biblioteca bibliotecaNueva = new Biblioteca("Nueva", "Granada", 2023);
-
-        // Imprimir por pantalla las bibliotecas creadas
-        System.out.println(bibliotecaSalon);
-        System.out.println(bibliotecaNueva);
-
-        // Calcular y imprimir por pantalla los presupuestos de las bibliotecas
-        System.out.println("Presupuesto de Salon: " + bibliotecaSalon.calcularPresupuesto());
-        System.out.println("Presupuesto de Nueva: " + bibliotecaNueva.calcularPresupuesto());
     }
 }
