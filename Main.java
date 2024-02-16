@@ -3,12 +3,21 @@ public class Main {
         // Lista de preguntas
         List<Pregunta> preguntas = new ArrayList<>();
 
-        // Añadpo con add 5 objetos de tipo pregunta, cada uno con una pregunta, una respuesta correcta y una puntuacion
+        // Añado con add 5 objetos de tipo pregunta, cada uno con una pregunta, una respuesta correcta y una puntuacion
         preguntas.add(new Pregunta("¿Cuál es la capital de Francia?", "París", 1));
         preguntas.add(new Pregunta("¿En qué año llegó el hombre a la luna por primera vez?", "1969", 2));
         preguntas.add(new Pregunta("¿Quién pintó la Mona Lisa?", "Leonardo da Vinci", 2));
         preguntas.add(new Pregunta("¿Cuál es el símbolo químico del agua?", "H2O", 1));
         preguntas.add(new Pregunta("¿Cuál es el planeta más grande del sistema solar?", "Júpiter", 2));
+        
+        /*  Tambien puedo hacer esto de la siguiente manera:
+            pregunta1 = new Pregunta("¿Cuál es la capital de Francia?", "París", 1);
+            pregunta2 = new Pregunta("¿En qué año llegó el hombre a la luna por primera vez?", "1969", 2);
+            etc ...
+            preguntas.add(pregunta1)
+            preguntas.add(pregunta2)
+            etc ...
+            */
 
         int puntuacionFinal = 0;
         Scanner scanner = new Scanner(System.in);
