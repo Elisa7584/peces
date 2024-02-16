@@ -1,6 +1,9 @@
 public class Main {
     public static void main(String[] args) {
+        // Lista de preguntas
         List<Pregunta> preguntas = new ArrayList<>();
+
+        // Añadpo con add 5 objetos de tipo pregunta, cada uno con una pregunta, una respuesta correcta y una puntuacion
         preguntas.add(new Pregunta("¿Cuál es la capital de Francia?", "París", 1));
         preguntas.add(new Pregunta("¿En qué año llegó el hombre a la luna por primera vez?", "1969", 2));
         preguntas.add(new Pregunta("¿Quién pintó la Mona Lisa?", "Leonardo da Vinci", 2));
