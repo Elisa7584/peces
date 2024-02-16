@@ -1,24 +1,39 @@
 public class Main {
     public static void main(String[] args) {
-        // Crear libros
-        Libro libro1 = new Libro("Las Tempestálidas", "Georgi Gospodinov", 841761, 2020, 400);
-        Libro libro2 = new Libro("Cómo matar a tu familia", "Bella Mackie", 849129, 2021, 400);
-        Libro libro3 = new Libro("Oso", "Marian Engel", 841597, 1976, 168);
+        List<Pregunta> preguntas = new ArrayList<>();
+        preguntas.add(new Pregunta("¿Cuál es la capital de Francia?", "París", 1));
+        preguntas.add(new Pregunta("¿En qué año llegó el hombre a la luna por primera vez?", "1969", 2));
+        preguntas.add(new Pregunta("¿Quién pintó la Mona Lisa?", "Leonardo da Vinci", 2));
+        preguntas.add(new Pregunta("¿Cuál es el símbolo químico del agua?", "H2O", 1));
+        preguntas.add(new Pregunta("¿Cuál es el planeta más grande del sistema solar?", "Júpiter", 2));
 
-        // Crear bibliotecas
-        Biblioteca biblioteca1 = new Biblioteca("Salón", "Granada", 1917);
-        biblioteca1.setNumPersonasAdscritas(32916);
-        biblioteca1.agregarLibro(libro1);
-        biblioteca1.agregarLibro(libro2);
+        int puntuacionFinal = 0;
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
 
-        Biblioteca biblioteca2 = new Biblioteca("Nueva", "Granada", 2023);
+        for (int i = 0; i < 2; i++) {
+            // Seleccionar una pregunta aleatoria
+            int indicePregunta = random.nextInt(preguntas.size());
+            Pregunta pregunta = preguntas.get(indicePregunta);
 
-        // Imprimir por pantalla las bibliotecas creadas
-        System.out.println(biblioteca1);
-        System.out.println(biblioteca2);
+            // Mostrar la pregunta
+            System.out.println("Pregunta " + (i + 1) + ": " + pregunta);
+            System.out.print("Respuesta: ");
+            String respuesta = scanner.nextLine();
 
-        // Calcular y imprimir presupuestos de las bibliotecas
-        System.out.println("Presupuesto Biblioteca 1: " + biblioteca1.calcularPresupuesto());
-        System.out.println("Presupuesto Biblioteca 2: " + biblioteca2.calcularPresupuesto());
+            // Verificar si la respuesta es correcta y actualizar la puntuación
+            if (pregunta.respuestaEsCorrecta(respuesta)) {
+                System.out.println("Respuesta correcta. ¡Ganaste " + pregunta.getPuntuacion() + " puntos!");
+                puntuacionFinal += pregunta.getPuntuacion();
+            } else {
+                System.out.println("Respuesta incorrecta. La respuesta correcta es: " + pregunta.respuestaCorrecta);
+            }
+
+            // Eliminar la pregunta para no repetirla
+            preguntas.remove(indicePregunta);
+        }
+
+        // Mostrar la puntuación final
+        System.out.println("\nPuntuación final: " + puntuacionFinal);
     }
 }
