@@ -47,7 +47,7 @@
   .derecha {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centrar horizontalmente */
+    justify-content: center;
   }
   
   .pelicula {
