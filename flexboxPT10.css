@@ -29,26 +29,26 @@
       color: #fff;
   }
 
-  /* Título principal */
+  /* peliculas */
   
   .peliculas {
     display: flex;
     justify-content: space-around;
     background-color: rgb(202, 202, 202);
   }
-  
+
   .izquierda {
+    display: flex;
     flex-direction: column;
+    justify-content: center; 
     align-items: center;
-  }
+  }  
   
   .derecha {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
   }
-  
-  /* Película */
   
   .pelicula {
     display: flex;
@@ -60,7 +60,7 @@
   }
 
   
-  /* Información */
+  /* footer */
   
   .footer {
     padding: 30px;
