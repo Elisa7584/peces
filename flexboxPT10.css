@@ -43,11 +43,11 @@
     justify-content: center; 
     align-items: center;
   }  
-  
+
   .derecha {
-    flex-direction: row;
+    display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    justify-content: center; /* Centrar horizontalmente */
   }
   
   .pelicula {
