@@ -33,7 +33,7 @@
   
   .peliculas {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: rgb(202, 202, 202);
   }
 
