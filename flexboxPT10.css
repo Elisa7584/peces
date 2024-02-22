@@ -33,7 +33,7 @@
   
   .peliculas {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: rgb(202, 202, 202);
   }
 
@@ -41,21 +41,28 @@
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    align-items: center;
   }  
 
   .derecha {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
   }
-  
+  .peliculaGrande {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid black;
+  }
   .pelicula {
     display: flex;
     flex-direction: column;
     text-align: center;
     flex-wrap: wrap;
     padding: 20px;
+    margin: 20px;
     border: 1px solid black;
   }
 
