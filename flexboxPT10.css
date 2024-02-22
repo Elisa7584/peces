@@ -1,13 +1,5 @@
 /* Estilos generales */
 
-* {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-  }
-  
   /* Encabezado */
   
   .header {
@@ -71,6 +63,7 @@
   /* Información */
   
   .footer {
+    padding: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
