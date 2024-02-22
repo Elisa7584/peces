@@ -81,10 +81,12 @@
   
   .footerIzquierda {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
-
+  .direccion ul {
+    list-style-type: none;
+  }
   .footerDerecha li {
     display: flex;
     justify-content: space-between;
