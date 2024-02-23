@@ -26,7 +26,7 @@ public class Estanteria {
         return pesoTotal;
     }
 
-    // Método para añadir un objeto si es posible
+    // Método para añadir un objeto si es posible, retorna True si es posible, False si no
     public boolean añadirObjeto(double peso) {
         if (pesoTotal() + peso <= pesoMaximo) {
             pesosObjetos.add(peso);
