@@ -25,9 +25,6 @@ public class Main {
                     estanteriaActual++;
                 }
             }
-            if (!objetoAñadido) {
-                System.out.println("No hay más estanterías disponibles para el objeto de " + peso + "kg");
-            }
         }
 
         // Mostrar el estado final de las estanterías
