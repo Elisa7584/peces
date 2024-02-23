@@ -27,7 +27,7 @@ public class Main {
             }
         }
 
-        // Mostrar el estado final de las estanterías
+        // Estado final de las estanterías
         System.out.println("\nEstado final de las estanterías:");
         for (int i = 0; i < estanterias.size(); i++) {
             System.out.println("Estantería " + i + ": " + estanterias.get(i));
