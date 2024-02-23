@@ -13,6 +13,7 @@ public static void main(String[] args) {
             while (estanteriaActual < estanterias.size()) {
                 if (estanterias.get(estanteriaActual).añadirObjeto(peso)) {
                     System.out.println("Se ha añadido un objeto de " + peso + "kg a la estantería " + estanteriaActual);
+                    break;
                 } else {
                     System.out.println("El objeto de " + peso + "kg no cabe en la estantería " + estanteriaActual + ", se pasa a la siguiente.");
                     estanteriaActual++;
