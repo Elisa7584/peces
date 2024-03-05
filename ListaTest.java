@@ -54,4 +54,30 @@ public class ListaTest {
         assertEquals(2, numeros.get(1).intValue());
         assertEquals(3, numeros.get(2).intValue());
     }
+
+    @Test
+    public void testBuscarNumeroEnLista() {
+        Lista lista = new Lista();
+        lista.aniadirNumeroALista(1);
+        lista.aniadirNumeroALista(2);
+        lista.aniadirNumeroALista(3);
+
+        assertEquals(1, lista.buscarNumeroEnLista(1));
+        assertEquals(2, lista.buscarNumeroEnLista(2));
+        assertEquals(-1, lista.buscarNumeroEnLista(4)); // Número no presente en la lista
+    }
+
+    @Test
+    public void testContarOcurrencias() {
+        Lista lista = new Lista();
+        lista.aniadirNumeroALista(1);
+        lista.aniadirNumeroALista(2);
+        lista.aniadirNumeroALista(2);
+        lista.aniadirNumeroALista(3);
+
+        assertEquals(1, lista.contarOcurrencias(1));
+        assertEquals(2, lista.contarOcurrencias(2));
+        assertEquals(0, lista.contarOcurrencias(4)); // Número no presente en la lista
+    }
+
 }
