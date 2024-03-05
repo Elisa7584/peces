@@ -80,4 +80,71 @@ public class ListaTest {
         assertEquals(0, lista.contarOcurrencias(4)); // Número no presente en la lista
     }
 
+    @Test
+    public void testBuscarTodasLasOcurrencias() {
+        Lista lista = new Lista();
+        lista.aniadirNumeroALista(1);
+        lista.aniadirNumeroALista(2);
+        lista.aniadirNumeroALista(2);
+        lista.aniadirNumeroALista(3);
+
+        ArrayList<Integer> ocurrencias2 = new ArrayList<>();
+        ocurrencias2.add(1);
+        ocurrencias2.add(2);
+
+        assertEquals(ocurrencias2, lista.buscarTodasLasOcurrencias(2));
+
+        ArrayList<Integer> ocurrencias4 = new ArrayList<>();
+        assertEquals(ocurrencias4, lista.buscarTodasLasOcurrencias(4)); // Número no presente en la lista
+    }
+
+    @Test
+    public void testOrdenarListaMenorAMayor() {
+        Lista lista = new Lista();
+        lista.aniadirNumeroALista(3);
+        lista.aniadirNumeroALista(2);
+        lista.aniadirNumeroALista(1);
+
+        Lista listaOrdenada = new Lista();
+        listaOrdenada.aniadirNumeroALista(1);
+        listaOrdenada.aniadirNumeroALista(2);
+        listaOrdenada.aniadirNumeroALista(3);
+
+        assertEquals(listaOrdenada.getListaNumeros(), lista.ordenarListaMenorAMayor().getListaNumeros());
+    }
+
+    @Test
+    public void testOrdenarListaMayorAMenor() {
+        Lista lista = new Lista();
+        lista.aniadirNumeroALista(1);
+        lista.aniadirNumeroALista(2);
+        lista.aniadirNumeroALista(3);
+
+        Lista listaOrdenada = new Lista();
+        listaOrdenada.aniadirNumeroALista(3);
+        listaOrdenada.aniadirNumeroALista(2);
+        listaOrdenada.aniadirNumeroALista(1);
+
+        assertEquals(listaOrdenada.getListaNumeros(), lista.ordenarListaMayorAMenor());
+    }
+
+    @Test
+    public void testEsCapicua() {
+        Lista listaCapicua = new Lista();
+        listaCapicua.aniadirNumeroALista(1);
+        listaCapicua.aniadirNumeroALista(2);
+        listaCapicua.aniadirNumeroALista(3);
+        listaCapicua.aniadirNumeroALista(2);
+        listaCapicua.aniadirNumeroALista(1);
+
+        Lista listaNoCapicua = new Lista();
+        listaNoCapicua.aniadirNumeroALista(1);
+        listaNoCapicua.aniadirNumeroALista(2);
+        listaNoCapicua.aniadirNumeroALista(3);
+        listaNoCapicua.aniadirNumeroALista(4);
+        listaNoCapicua.aniadirNumeroALista(5);
+
+        assertTrue(listaCapicua.esCapicua());
+        assertFalse(listaNoCapicua.esCapicua());
+    }
 }
