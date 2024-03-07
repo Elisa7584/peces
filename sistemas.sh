@@ -1,23 +1,23 @@
 #!/bin/bash
 
 # Definir funciones para generar nombres, apellidos, edad, DNI y número de teléfono
-get_random_name() {
-    names=("Juan" "María" "Carlos" "Laura" "Ana" "Pedro" "Luisa" "Javier" "Elena" "Miguel")
-    rand_index=$((RANDOM % ${#names[@]}))
-    echo "${names[$rand_index]}"
+get_random_nombre() {
+    nombres=("Juan" "María" "Carlos" "Laura" "Ana" "Pedro" "Luisa" "Javier" "Elena" "Miguel")
+    random_index=$((RANDOM % ${#nombres[@]}))
+    echo "${nombres[$random_index]}"
 }
 
-get_random_last_name() {
-    last_names=("García" "Martínez" "López" "Fernández" "González" "Rodríguez" "Sánchez" "Pérez" "Gómez" "Díaz")
-    rand_index=$((RANDOM % ${#last_names[@]}))
-    echo "${last_names[$rand_index]}"
+get_random_apellidos() {
+    apellidos=("García" "Martínez" "López" "Fernández" "González" "Rodríguez" "Sánchez" "Pérez" "Gómez" "Díaz")
+    random_index=$((RANDOM % ${#apellidos[@]}))
+    echo "${apellidos[$random_index]}"
 }
 
-get_random_age() {
+get_random_edad() {
     echo $((RANDOM % 83 + 18))
 }
 
-generate_dni() {
+generar_dni() {
     dni=""
     for i in {1..8}; do
         dni+=${RANDOM:0:1}
@@ -26,13 +26,13 @@ generate_dni() {
     echo "$dni"
 }
 
-generate_phone_number() {
-    first_digit=$((RANDOM % 2 + 6))
-    phone_number="$first_digit"
+generar_num_tel() {
+    primer_digito=$((RANDOM % 2 + 6))
+    numero_tel="$primer_digito"
     for i in {1..8}; do
-        phone_number+=${RANDOM:0:1}
+        numero_tel+=${RANDOM:0:1}
     done
-    echo "$phone_number"
+    echo "$numero_tel"
 }
 
 # Verificar si se proporciona el número de personas como argumento
@@ -47,12 +47,12 @@ file="personasFake.txt"
 echo "" > "$file"
 
 for ((i=1; i<=$num_personas; i++)); do
-    nombre=$(get_random_name)
-    apellido1=$(get_random_last_name)
-    apellido2=$(get_random_last_name)
-    edad=$(get_random_age)
-    dni=$(generate_dni)
-    telefono=$(generate_phone_number)
+    nombre=$(get_random_nombre)
+    apellido1=$(get_random_apellidos)
+    apellido2=$(get_random_apellidos)
+    edad=$(get_random_edad)
+    dni=$(generar_dni)
+    telefono=$(generar_num_tel)
     echo "Persona $i: $nombre $apellido1 $apellido2 - Edad: $edad - Teléfono: $telefono - DNI: $dni" >> "$file"
 done
 
