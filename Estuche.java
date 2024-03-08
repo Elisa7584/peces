@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Estuche {
     private int numMaxBoligrafos;
@@ -27,7 +26,7 @@ public class Estuche {
         for (int i = 0; i < boligrafos.size(); i++) {
             if (boligrafos.get(i).getNumUsos() >= Boligrafo.getNumusosmax()) {
                 boligrafos.remove(i);
-                i--; // Necesario para ajustar el índice después de eliminar un elemento
+                i--;
             }
         }
     }
