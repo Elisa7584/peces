@@ -2,18 +2,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     Estuche miEstuche = new Estuche();
 
     while (miEstuche.boligrafos.size() < miEstuche.numMaxBoligrafos) {
         System.out.println("Introduce el color del bolígrafo: ");
-        String color = scanner.nextLine();
+        String color = sc.nextLine();
         Boligrafo nuevoBoli = new Boligrafo(color, 0);
         miEstuche.aniadirBoligrafo(nuevoBoli);
     }
 
     System.out.println("Introduce un texto para gastar un bolígrafo: ");
-    String texto = scanner.nextLine();
+    String texto = sc.nextLine();
     Boligrafo boliAEscribir = miEstuche.boligrafos.get(0);
     boliAEscribir.escribir(texto);
 
