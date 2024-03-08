@@ -17,7 +17,6 @@ public static void main(String[] args) {
     Boligrafo boliAEscribir = miEstuche.boligrafos.get(0);
     boliAEscribir.escribir(texto);
 
-    // Modificando el número de usos de otro bolígrafo para que esté gastado
     if (miEstuche.boligrafos.size() > 1) {
         Boligrafo boliGastado = miEstuche.boligrafos.get(1);
         boliGastado.setNumUsos(Boligrafo.getNumusosmax());
